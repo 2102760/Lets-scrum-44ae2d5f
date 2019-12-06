@@ -1,21 +1,24 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+const toggle = document.querySelector('.toggle-input');
+const initialState = localStorage.getItem('toggleState') == 'true';
+toggle.checked = initialState;
 
-'use strict';
+toggle.addEventListener('change', function () {
+  if (toggle.checked) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.executeScript(
+        tabs[0].id,
+        { code: 'var head=document.getElementsByTagName("HEAD")[0],link=document.createElement("link");link.rel="stylesheet",link.id="dark",link.type="text/css",link.href="' + chrome.runtime.getURL('dark.css') + '",head.appendChild(link);' 
+      });
+    });
+  } else {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.executeScript(
+        tabs[0].id,
+        {
+          code: 'document.getElementById("dark").remove();'
+        });
+    });
+  }
 
-let changeColor = document.getElementById('changeColor');
-
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
+  localStorage.setItem('toggleState', toggle.checked);
 });
-
-changeColor.onclick = function (element) {
-  let color = element.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.executeScript(
-      tabs[0].id,
-      { code: 'var head = document.getElementsByTagName("HEAD")[0]; var link = document.createElement("link"); link.rel = "stylesheet"; link.type = "text/css"; link.href = "' + chrome.runtime.getURL('dark.css') + '"; head.appendChild(link); ' });
-  });
-};
