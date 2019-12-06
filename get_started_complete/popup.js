@@ -16,6 +16,6 @@ changeColor.onclick = function (element) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.executeScript(
       tabs[0].id,
-      { code: 'document.body.style.backgroundColor = "' + color + '";' });
+      { code: 'var head = document.getElementsByTagName("HEAD")[0]; var link = document.createElement("link"); link.rel = "stylesheet"; link.type = "text/css"; link.href = "' + chrome.runtime.getURL('dark.css') + '"; head.appendChild(link); ' });
   });
 };
