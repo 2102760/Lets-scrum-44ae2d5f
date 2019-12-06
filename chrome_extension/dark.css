@@ -47,3 +47,101 @@ body {
 .finished .name {
 	background-color: #439C73 !important;
 }
+.content-container .page-divider .accordion h2 {
+	color: #fff;
+}
+.mat-expansion-panel {
+	background-color:#666666 !important;
+}
+.content table, .content table * {
+	border: 0 !important;
+}
+.mat-expansion-panel * {
+	color: #fff !important;
+}
+.exercise * {
+	color: #fff !important;
+}
+app-page-header .header-container .logo img {
+	content:url("https://i.ibb.co/ZXXDXFC/logo-black-beta.png");
+}
+.mat-accordion mat-expansion-panel mat-expansion-panel-header[id*="mat-expansion-panel-header"] {
+	background-color: #4D4D4D !important;
+}
+.mat-accordion mat-expansion-panel mat-expansion-panel-header[id*="mat-expansion-panel-header"] {
+	color: #fff !important;
+}
+.challenge-banner {
+	background-color: #4D4D4D !important;
+}
+.actions button {
+	background-color: #1c96a3 !important;
+}
+.new-technique {
+	background: #569B7A !important;
+}
+.reoccuring-technique {
+	background: #58959C !important;
+}
+markdown pre {
+	background-color: #4D4D4D !important;
+}
+.forbidden-technique {
+	background: #985258 !important;
+}
+.content-container mat-table {
+	background-color: #4D4D4D !important;
+}
+.content-container mat-table * {
+	color: #fff !important;
+}
+.content-container mat-table button {
+	background-color: #1c96a3 !important;
+}
+.mat-row:hover {
+	background: #7A7A7A !important;
+}
+.mat-row .chip.success {
+	background: #569B7A !important;
+}
+.mat-row .chip.error {
+	background: #985258 !important;
+}
+.event-container {
+	background-color: #4D4D4D !important;
+}
+.event-container * {
+	color: #fff !important;
+}
+.content-container .review-info * {
+	color: #fff;
+}
+.content-container .repo-links a {
+	background-color: #1c96a3 !important;
+}
+.content-container .how-to-review {
+	background-color: #4D4D4D !important;
+}
+.content-container .how-to-review * {
+	color: #fff !Important;
+}
+.actions button[color="accent"] {
+	background-color: #569B7A !important;
+	color: #fff !important;
+}
+.actions button[color="warn"] {
+	background-color: #985258 !important;
+	color: #fff !important;
+}
+mat-dialog-container.mat-dialog-container {
+	background-color: #4D4D4D !important;
+}
+mat-dialog-container.mat-dialog-container * {
+	color: #fff !important;
+}
+.mat-dialog-content .modal-buttons mat-dialog-container button[color="accent"] {
+	background-color: #569B7A !important;
+}
+mat-dialog-container button.mat-raised-button {
+	background-color: #2D2D2D !important;
+}
