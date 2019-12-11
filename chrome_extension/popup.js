@@ -11,7 +11,9 @@ toggle.addEventListener('change', function () {
       });
     });
 
-    localStorage.setItem('darkmode', true);
+    chrome.storage.sync.set({'darkmode': true}, function() {
+      log('Settings saved');
+    });
 
   } else {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -22,7 +24,9 @@ toggle.addEventListener('change', function () {
         });
     });
 
-    localStorage.setItem('darkmode', false);
+    chrome.storage.sync.set({'darkmode': false}, function() {
+      log('Settings saved');
+    });
 
   }
 
