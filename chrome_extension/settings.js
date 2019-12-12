@@ -44,14 +44,10 @@ function loadSettings() {
                         </td>
                         <td id="breakTimer">
                             <div class="chip success ng-star-inserted">
-                                <!---->
-                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                        done_all
-                                    </mat-icon>
-                                    <!---->
-                                    <!---->
-                                    <!----> 
-                                    Aan
+                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                    done_all
+                                </mat-icon>
+                                Aan
                             </div>
                         </td>
                     </tr>
@@ -60,15 +56,11 @@ function loadSettings() {
                             Darkmode
                         </td>
                         <td id="breakTimer">
-                            <div class="chip success ng-star-inserted">
-                                <!---->
-                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                        done_all
-                                    </mat-icon>
-                                    <!---->
-                                    <!---->
-                                    <!----> 
-                                    Aan
+                            <div class="chip error ng-star-inserted">
+                                <mat-icon _ngcontent-sck-c23="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                    not_interested
+                                </mat-icon>
+                                Uit
                             </div>
                         </td>
                     </tr>
@@ -78,14 +70,10 @@ function loadSettings() {
                         </td>
                         <td id="breakTimer">
                             <div class="chip success ng-star-inserted">
-                                <!---->
-                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                        done_all
-                                    </mat-icon>
-                                    <!---->
-                                    <!---->
-                                    <!----> 
-                                    Aan
+                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                    done_all
+                                </mat-icon>
+                                Aan
                             </div>
                         </td>
                     </tr>
@@ -95,14 +83,10 @@ function loadSettings() {
                         </td>
                         <td id="breakTimer">
                             <div class="chip success ng-star-inserted">
-                                <!---->
-                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                        done_all
-                                    </mat-icon>
-                                    <!---->
-                                    <!---->
-                                    <!----> 
-                                    Aan
+                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                    done_all
+                                </mat-icon>
+                                Aan
                             </div>
                         </td>
                     </tr>
