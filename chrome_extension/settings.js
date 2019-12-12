@@ -43,51 +43,31 @@ function loadSettings() {
                             Pauze notificatie
                         </td>
                         <td id="breakTimer">
-                            <div class="chip success ng-star-inserted">
-                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                    done_all
-                                </mat-icon>
-                                Aan
-                            </div>
+
                         </td>
                     </tr>
                     <tr>
                         <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Darkmode
                         </td>
-                        <td id="breakTimer">
-                            <div class="chip error ng-star-inserted">
-                                <mat-icon _ngcontent-sck-c23="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                    not_interested
-                                </mat-icon>
-                                Uit
-                            </div>
+                        <td id="darkMode">
+
                         </td>
                     </tr>
                     <tr>
                         <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Review counter
                         </td>
-                        <td id="breakTimer">
-                            <div class="chip success ng-star-inserted">
-                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                    done_all
-                                </mat-icon>
-                                Aan
-                            </div>
+                        <td id="reviewCounter">
+
                         </td>
                     </tr>
                     <tr>
                         <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Chat
                         </td>
-                        <td id="breakTimer">
-                            <div class="chip success ng-star-inserted">
-                                <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                                    done_all
-                                </mat-icon>
-                                Aan
-                            </div>
+                        <td id="chat">
+                        
                         </td>
                     </tr>
                 </tbody
@@ -105,5 +85,51 @@ function loadSettings() {
 
     var createdSettingCard = document.getElementById("improvement-content");
 
+    // var chatSettingDataCell         = document.getElementById("chat");
+    // var reviewCounterDataCell       = document.getElementById("reviewCounter");
+    // var darkModeSettingDataCell     = document.getElementById("darkMode");
+    // var breakTimerSettingDataCell   = document.getElementById("breakTimer");
 
+    toggleSetting("breakTimer");
+    toggleSetting("darkMode");
+    toggleSetting("reviewCounter");
+    toggleSetting("chat");
+}
+
+function toggleSetting(setting) {
+    chrome.storage.sync.get([setting], function(items) {
+        var element = document.getElementById(setting);
+        if(items[setting]) {
+            var flag = document.createElement("div");
+                flag.className = "chip success ng-star-inserted",
+                flag.onclick = function() {
+                    chrome.storage.sync.set({setting: false});
+                    window.location.href = window.location.href;
+                };
+                flag.innerHTML = `
+                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                        done_all
+                    </mat-icon>
+                    Aan
+                `,
+                element.appendChild(flag)
+            ;
+            
+        } else {
+            var flag = document.createElement("div");
+                flag.className = "chip error ng-star-inserted",
+                flag.onclick = function() {
+                    chrome.storage.sync.set({setting: true});
+                    window.location.href = window.location.href;
+                };
+                flag.innerHTML = `
+                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                        not_interested
+                    </mat-icon>
+                    Uit
+                `,
+                element.appendChild(flag)
+            ;
+        }
+    });
 }

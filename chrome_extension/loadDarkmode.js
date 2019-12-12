@@ -1,5 +1,5 @@
-chrome.storage.sync.get(['darkmode'], function(items) {
-    if(items.darkmode) {
+chrome.storage.sync.get(['darkMode'], function(items) {
+    if(items.darkMode) {
         chrome.runtime.sendMessage({file: "dark.css"}, function(response) {
             var head=document.getElementsByTagName("HEAD")[0],link=document.createElement("link");
                 link.rel="stylesheet",
@@ -12,7 +12,7 @@ chrome.storage.sync.get(['darkmode'], function(items) {
         var rightSide =document.getElementsByClassName("right-side")[0],
             switchen=document.createElement("div");
             switchen.onclick = function() { 
-                chrome.storage.sync.set({'darkmode': false});
+                chrome.storage.sync.set({'darkMode': false});
                 window.location.href = window.location.href;
             };
             switchen.style = "margin-top: auto; margin-bottom: auto; padding-right: 10px; cursor: pointer;",
@@ -23,7 +23,7 @@ chrome.storage.sync.get(['darkmode'], function(items) {
         var rightSide =document.getElementsByClassName("right-side")[0],
             switchen=document.createElement("div");
             switchen.onclick = function() { 
-                chrome.storage.sync.set({'darkmode': true});
+                chrome.storage.sync.set({'darkMode': true});
                 window.location.href = window.location.href;
             };
             switchen.style = "margin-top: auto; margin-bottom: auto; padding-right: 10px; cursor: pointer;",
@@ -40,11 +40,11 @@ document.getElementsByClassName("credit")[0].style.paddingLeft = "10px";
 function changeMode(state) {
     if (state) {
         alert('1');
-        chrome.storage.sync.set({'darkmode': true}, function() {
+        chrome.storage.sync.set({'darkMode': true}, function() {
             console.log('Value is set to ' + value);
         });
     } else {
-        chrome.storage.sync.set({'darkmode': false}, function() {
+        chrome.storage.sync.set({'darkMode': false}, function() {
             console.log('Value is set to ' + value);
         });
     }
