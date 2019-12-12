@@ -103,7 +103,9 @@ function toggleSetting(setting) {
             var flag = document.createElement("div");
                 flag.className = "chip success ng-star-inserted",
                 flag.onclick = function() {
-                    chrome.storage.sync.set({setting: false});
+                    var save = {};
+                    save[setting] = false;
+                    chrome.storage.sync.set(save);
                     window.location.href = window.location.href;
                 };
                 flag.innerHTML = `
@@ -119,7 +121,9 @@ function toggleSetting(setting) {
             var flag = document.createElement("div");
                 flag.className = "chip error ng-star-inserted",
                 flag.onclick = function() {
-                    chrome.storage.sync.set({setting: true});
+                    var save = {};
+                    save[setting] = true;
+                    chrome.storage.sync.set(save);
                     window.location.href = window.location.href;
                 };
                 flag.innerHTML = `
