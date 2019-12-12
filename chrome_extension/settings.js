@@ -39,7 +39,7 @@ function loadSettings() {
             <table> 
                 <tbody>
                     <tr>
-                        <td style="padding-right: 60px;">
+                        <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Pauze notificatie
                         </td>
                         <td id="breakTimer">
@@ -52,7 +52,7 @@ function loadSettings() {
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-right: 60px;">
+                        <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Darkmode
                         </td>
                         <td id="breakTimer">
@@ -65,7 +65,7 @@ function loadSettings() {
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-right: 60px;">
+                        <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Review counter
                         </td>
                         <td id="breakTimer">
@@ -78,7 +78,7 @@ function loadSettings() {
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-right: 60px;">
+                        <td style="padding-right: 60px; position: relative; top: -3.2%;">
                             Chat
                         </td>
                         <td id="breakTimer">
