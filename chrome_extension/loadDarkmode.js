@@ -1,6 +1,4 @@
 chrome.storage.sync.get(['darkmode'], function(items) {
-    console.log('Settings retrieved', items);
-
     if(items.darkmode) {
         chrome.runtime.sendMessage({file: "dark.css"}, function(response) {
             var head=document.getElementsByTagName("HEAD")[0],link=document.createElement("link");
@@ -36,6 +34,7 @@ chrome.storage.sync.get(['darkmode'], function(items) {
 });
 
 document.getElementsByTagName("app-user-credits")[0].style.borderLeft = "1px solid #ccc";
+document.getElementsByTagName("app-user-credits")[0].style.borderRight = "1px solid #ccc";
 document.getElementsByClassName("credit")[0].style.paddingLeft = "10px";
 
 function changeMode(state) {

@@ -21,6 +21,14 @@
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],
       "js": ["loadDarkmode.js"]
+    },   
+    {
+      "matches": ["https://jarvis.bit-academy.nl/*"],
+      "js": ["breakTimer.js"]
+    },    
+    {
+      "matches": ["https://jarvis.bit-academy.nl/a/settings*"],
+      "js": ["settings.js"]
     }
   ],
   "icons": {
