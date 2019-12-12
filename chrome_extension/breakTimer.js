@@ -25,10 +25,15 @@ function notifyMe(msg) {
     // want to be respectful there is no need to bother them any more.
 }
 
-var breakTimes = [
+var breakStartTimes = [
     "11:0:0",
     "12:30:0",
     "14:30:0"
+];
+var breakEndTimes = [
+    "11:15:0",
+    "13:0:0",
+    "14:45:0"
 ];
 
 var today = new Date();
@@ -38,9 +43,14 @@ if (day < 6) {
     setInterval(() => {
         var today = new Date();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        breakTimes.forEach(element => {
+        breakStartTimes.forEach(element => {
             if (time === element) {
                 notifyMe('Het is pauze geniet er van!');
+            }
+        });
+        breakEndTimes.forEach(element => {
+            if (time === element) {
+                notifyMe('De pauze is voorbij, je moet weer aan de slag!');
             }
         });
     }, 1000);

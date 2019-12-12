@@ -1,3 +1,12 @@
+var buttons = document.querySelector(".menu-button.mat-menu-item");
+console.log(buttons);
+// for (let index = 0; index < buttons.length; index++) {
+//     const element = buttons[index];
+//     element.onclick = function() { 
+//         console.log('test');
+//     };
+// }
+
 chrome.storage.sync.get(['darkmode'], function(items) {
     if(items.darkmode) {
         chrome.runtime.sendMessage({file: "dark.css"}, function(response) {
