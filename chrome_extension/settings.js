@@ -55,6 +55,57 @@ function loadSettings() {
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="padding-right: 60px;">
+                            Darkmode
+                        </td>
+                        <td id="breakTimer">
+                            <div class="chip success ng-star-inserted">
+                                <!---->
+                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                        done_all
+                                    </mat-icon>
+                                    <!---->
+                                    <!---->
+                                    <!----> 
+                                    Aan
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 60px;">
+                            Review counter
+                        </td>
+                        <td id="breakTimer">
+                            <div class="chip success ng-star-inserted">
+                                <!---->
+                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                        done_all
+                                    </mat-icon>
+                                    <!---->
+                                    <!---->
+                                    <!----> 
+                                    Aan
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 60px;">
+                            Chat
+                        </td>
+                        <td id="breakTimer">
+                            <div class="chip success ng-star-inserted">
+                                <!---->
+                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                        done_all
+                                    </mat-icon>
+                                    <!---->
+                                    <!---->
+                                    <!----> 
+                                    Aan
+                            </div>
+                        </td>
+                    </tr>
                 </tbody
             </table>
         `,
