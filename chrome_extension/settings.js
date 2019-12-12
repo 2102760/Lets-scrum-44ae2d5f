@@ -1,35 +1,74 @@
-var head=document.getElementsByTagName("HEAD")[0];
-var style = document.createElement("style");
-    style.innerHTML = 'mat-card{transition: none !important;}mat-card#matcard-0{position:absolute;top:50%;left:20%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}mat-card#matcard-1{position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}mat-card#matcard-2{position:absolute;top:50%;left:80%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}',
-    head.appendChild(style)
-;
+var oldURL = " ";
+setInterval(() => {
+    if (oldURL != window.location.href) {
+        if (window.location.href.includes('settings')) {
+            loadSettings()
+        }
+        oldURL = window.location.href
+    }
+}, 1000);
 
-var settingsBox = document.querySelector(".ng-tns-c9-2.ng-trigger.ng-trigger-multiComponentAppear");
+function loadSettings() {
+    var head=document.getElementsByTagName("HEAD")[0];
+    var style = document.createElement("style");
+        style.innerHTML = 'mat-card{transition: none !important;}mat-card#matcard-0{position:absolute;top:50%;left:20%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}mat-card#matcard-1{position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}mat-card#matcard-2{position:absolute;top:50%;left:80%;margin-right:-50%;transform:translate(-50%,-50%);height:35%}',
+        head.appendChild(style)
+    ;
 
-var newSettingCard = document.createElement("mat-card");
-    newSettingCard.className = "mat-card",
-    newSettingCard.style = "margin: 25px; width: 400px;",
-    newSettingCard.id = "matcard-2",
-    settingsBox.appendChild(newSettingCard)
-;
+    var settingsBox = document.querySelector(".ng-trigger.ng-trigger-multiComponentAppear");
 
-var createdSettingCard = document.getElementById("matcard-2");
+    var newSettingCard = document.createElement("mat-card");
+        newSettingCard.className = "mat-card",
+        newSettingCard.style = "margin: 25px; width: 400px;",
+        newSettingCard.id = "matcard-2",
+        settingsBox.appendChild(newSettingCard)
+    ;
 
-var settingTitle = document.createElement("mat-card-title");
-    settingTitle.className = "mat-card-title",
-    settingTitle.innerHTML = 'Improvement instellingen',
-    createdSettingCard.appendChild(settingTitle)
-;
+    var createdSettingCard = document.getElementById("matcard-2");
 
-var settingBody = document.createElement("mat-card-content");
-    settingBody.className = "mat-card-content",
-    settingBody.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula ipsum at mi semper feugiat. Vivamus a porttitor purus. Nulla varius faucibus posuere. Proin vel vestibulum justo, id scelerisque libero. Suspendisse viverra sollicitudin hendrerit. Donec vel suscipit massa. Morbi volutpat, felis eu facilisis rutrum, risus nibh luctus leo, at posuere elit turpis vitae risus.'
-    createdSettingCard.appendChild(settingBody)
-;
+    var settingTitle = document.createElement("mat-card-title");
+        settingTitle.className = "mat-card-title",
+        settingTitle.innerHTML = 'Improvement instellingen',
+        createdSettingCard.appendChild(settingTitle)
+    ;
 
-var matCards = document.getElementsByClassName("mat-card");
+    var settingBody = document.createElement("mat-card-content");
+        settingBody.className = "mat-card-content",
+        settingBody.id = "improvement-content",
+        settingBody.innerHTML = `
+            <table> 
+                <tbody>
+                    <tr>
+                        <td style="padding-right: 60px;">
+                            Pauze notificatie
+                        </td>
+                        <td id="breakTimer">
+                            <div class="chip success ng-star-inserted">
+                                <!---->
+                                    <mat-icon _ngcontent-dwo-c29="" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                                        done_all
+                                    </mat-icon>
+                                    <!---->
+                                    <!---->
+                                    <!----> 
+                                    Aan
+                            </div>
+                        </td>
+                    </tr>
+                </tbody
+            </table>
+        `,
+        createdSettingCard.appendChild(settingBody)
+    ;
 
-for (let index = 0; index < matCards.length; index++) {
-    const element = matCards[index];
-    element.id = 'matcard-' + index;
+    var matCards = document.getElementsByClassName("mat-card");
+
+    for (let index = 0; index < matCards.length; index++) {
+        const element = matCards[index];
+        element.id = 'matcard-' + index;
+    }
+
+    var createdSettingCard = document.getElementById("improvement-content");
+
+
 }
