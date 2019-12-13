@@ -29,6 +29,10 @@
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],
       "js": ["settings.js"]
+    },    
+    {
+      "matches": ["https://jarvis.bit-academy.nl/*"],
+      "js": ["reviewCounter.js"]
     }
   ],
   "icons": {
