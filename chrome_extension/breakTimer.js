@@ -1,4 +1,3 @@
-
 function notifyMe(msg) {
     // Let's check if the browser supports notifications
     if (!("Notification" in window)) {
