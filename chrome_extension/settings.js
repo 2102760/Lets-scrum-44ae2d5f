@@ -82,7 +82,7 @@ function loadSettings() {
         const element = matCards[index];
         element.id = 'matcard-' + index;
     }
-    
+
     toggleSetting("breakTimer");
     toggleSetting("darkMode");
     toggleSetting("reviewCounter");
@@ -103,6 +103,7 @@ function displayLabel(state, setting){
     var element = document.getElementById(setting);
     var flag = document.createElement("div");
         flag.className = `chip  ${state ? 'success': 'error'} ng-star-inserted`,
+        flag.style.cursor = "pointer",
         flag.onclick = function() {
             var save = {};
             save[setting] = !state;
