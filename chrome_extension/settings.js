@@ -6,7 +6,7 @@ setInterval(() => {
         }
         oldURL = window.location.href
     }
-}, 1000);
+}, 1);
 
 function loadSettings() {
     var head=document.getElementsByTagName("HEAD")[0];
