@@ -82,14 +82,7 @@ function loadSettings() {
         const element = matCards[index];
         element.id = 'matcard-' + index;
     }
-
-    var createdSettingCard = document.getElementById("improvement-content");
-
-    // var chatSettingDataCell         = document.getElementById("chat");
-    // var reviewCounterDataCell       = document.getElementById("reviewCounter");
-    // var darkModeSettingDataCell     = document.getElementById("darkMode");
-    // var breakTimerSettingDataCell   = document.getElementById("breakTimer");
-
+    
     toggleSetting("breakTimer");
     toggleSetting("darkMode");
     toggleSetting("reviewCounter");
@@ -98,42 +91,30 @@ function loadSettings() {
 
 function toggleSetting(setting) {
     chrome.storage.sync.get([setting], function(items) {
-        var element = document.getElementById(setting);
         if(items[setting]) {
-            var flag = document.createElement("div");
-                flag.className = "chip success ng-star-inserted",
-                flag.onclick = function() {
-                    var save = {};
-                    save[setting] = false;
-                    chrome.storage.sync.set(save);
-                    window.location.href = window.location.href;
-                };
-                flag.innerHTML = `
-                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                        done_all
-                    </mat-icon>
-                    Aan
-                `,
-                element.appendChild(flag)
-            ;
-            
+            displayLabel(true, setting);
         } else {
-            var flag = document.createElement("div");
-                flag.className = "chip error ng-star-inserted",
-                flag.onclick = function() {
-                    var save = {};
-                    save[setting] = true;
-                    chrome.storage.sync.set(save);
-                    window.location.href = window.location.href;
-                };
-                flag.innerHTML = `
-                    <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
-                        not_interested
-                    </mat-icon>
-                    Uit
-                `,
-                element.appendChild(flag)
-            ;
+            displayLabel(false, setting);
         }
     });
+}
+
+function displayLabel(state, setting){
+    var element = document.getElementById(setting);
+    var flag = document.createElement("div");
+        flag.className = `chip  ${state ? 'success': 'error'} ng-star-inserted`,
+        flag.onclick = function() {
+            var save = {};
+            save[setting] = !state;
+            chrome.storage.sync.set(save);
+            window.location.href = window.location.href;
+        };
+        flag.innerHTML = `
+            <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" role="img" aria-hidden="true">
+                ${state ? 'done_all': 'not_interested'}
+            </mat-icon>
+            ${state ? 'Aan': 'Uit'}
+        `,
+        element.appendChild(flag)
+    ;
 }

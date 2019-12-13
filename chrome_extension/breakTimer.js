@@ -39,19 +39,27 @@ var breakEndTimes = [
 var today = new Date();
 var day = today.getDay();
 
-if (day < 6) {
-    setInterval(() => {
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        breakStartTimes.forEach(element => {
-            if (time === element) {
-                notifyMe('Het is pauze geniet er van!');
-            }
-        });
-        breakEndTimes.forEach(element => {
-            if (time === element) {
-                notifyMe('De pauze is voorbij, je moet weer aan de slag!');
-            }
-        });
-    }, 1000);
-}
+chrome.storage.sync.get(['breakTimer'], function(items) {
+    if(items.breakTimer) {
+        if (day < 6) {
+            setInterval(() => {
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                breakStartTimes.forEach(element => {
+                    if (time === element) {
+                        notifyMe('Het is pauze geniet er van!');
+                    }
+                });
+                breakEndTimes.forEach(element => {
+                    if (time === element) {
+                        notifyMe('De pauze is voorbij, je moet weer aan de slag!');
+                    }
+                });
+
+                if (time === "16:0:0") {
+                    notifyMe('De les is voorbij, fijne reis');
+                }
+            }, 1000);
+        }
+    }
+});
