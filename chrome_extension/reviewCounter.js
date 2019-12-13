@@ -48,28 +48,34 @@ iframe.onload = function () {
 			await delay(1000);
 			var myEle = document.getElementById('rCounter');
 			if (myEle) {
-				myEle.parentElement.parentElement.remove();
+				myEle.remove();
 			}
 			var bb = getElementByXpath(iframeDocument, "/html/body/app-root/app-page-header/div[2]/div[2]/app-page-reviews/div/app-reviews-overview-table/app-loading/div/div/mat-table").childNodes;
 			var reviewsOpen = bb.length-4;
 			console.log(reviewsOpen);
 			var a = document.getElementsByClassName("header-container")[0].getElementsByClassName("right-side")[0];
+			var rC = document.createElement("app-user-credits");
+			rC.onclick = "document.getElementById('reviewsUrlCodeKnop').click()";
+			rC.class = "ng-tns-c1-0";
+			rC.style="display: flex; padding: 5px 0; cursor: pointer; border-right: 1px solid rgb(204, 204, 204) !important; margin-right: 10px;";
+			rC.id = "rCounter";
 			var extra = `
-			<app-user-credits _ngcontent-ffg-c1="" onclick="document.getElementById('reviewsUrlCodeKnop').click()" class="ng-tns-c1-0" style="display: flex; padding: 5px 0; cursor: pointer;" _nghost-ffg-c3="">
+				<a href="https://jarvis.bit-academy.nl/a/code/reviews?state=OPEN" id="reviewsUrlCodeKnop"></a>
 				<!---->
-				<div _ngcontent-ffg-c3="" onclick="document.getElementById('reviewsUrlCodeKnop').click()" class="credit ng-star-inserted" aria-describedby="cdk-describedby-message-3" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding-right: 10px; border-right: 1px solid #ccc; display: flex; align-items: center; margin-right: 10px;">
+				<div _ngcontent-ffg-c3="" onclick="document.getElementById('reviewsUrlCodeKnop').click()" class="credit ng-star-inserted" aria-describedby="cdk-describedby-message-3" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding-right: 10px; display: flex; align-items: center;">
 					<mat-icon _ngcontent-ffg-c3="" class="mat-icon notranslate material-icons mat-icon-no-color" style="padding-right: 5px;" role="img" aria-hidden="true">
 						rate_review
 					</mat-icon>
-					<span _ngcontent-ffg-c3="" id="rCounter">
+					<span _ngcontent-ffg-c3="">
 						` + reviewsOpen.toString() + `
 					</span>
 				</div>
-				<!---->
-			</app-user-credits>
-			
+				<!---->			
 			`;
-			a.innerHTML = extra + a.innerHTML;
+			rC.innerHTML = extra;
+			a.insertBefore(rC, a.firstChild);
+			//a.appendChild(rC);
+			//a.innerHTML = extra + a.innerHTML;
 		};
 		yourFunction();
 }
