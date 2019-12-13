@@ -43,7 +43,6 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 		document.body.appendChild(iframe);
 		iframe.onload = function () {
 			iframe = this;
-			console.log("Hoeveelheid reviews open");
 			var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
 				const delay = ms => new Promise(res => setTimeout(res, ms));
 				const yourFunction = async () => {
@@ -54,7 +53,6 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 					}
 					var bb = getElementByXpath(iframeDocument, "/html/body/app-root/app-page-header/div[2]/div[2]/app-page-reviews/div/app-reviews-overview-table/app-loading/div/div/mat-table").childNodes;
 					var reviewsOpen = bb.length-4;
-					console.log(reviewsOpen);
 					var a = document.getElementsByClassName("header-container")[0].getElementsByClassName("right-side")[0];
 					var rC = document.createElement("app-user-credits");
 					rC.onclick = "document.getElementById('reviewsUrlCodeKnop').click()";
