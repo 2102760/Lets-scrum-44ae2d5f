@@ -91,20 +91,20 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 		cframe.src = "https://jarvis.bit-academy.nl/a/code/reviews?state=ASSIGNED";
 		document.body.appendChild(cframe);
 		cframe.onload = function () {
-			console.log("yeet");
+		//	console.log("yeet");
 			cframe = this;
 			var cframeDocument = cframe.contentDocument || cframe.contentWindow.document;
-			console.log(cframeDocument);
+		//	console.log(cframeDocument);
 			const yourCFrame = async () => {
-				console.log("yeet");
+			//	console.log("yeet");
 				var bba = getElementByXpath(cframeDocument, "/html/body/app-root/app-page-header/div[2]/div[2]/app-page-reviews/div/app-reviews-overview-table/app-loading/div/div/mat-table").childNodes;
-				console.log(bba);
+			//	console.log(bba);
 				var reviewsOpena = bba.length-4;
 				if (reviewsOpena > 0){
 					document.getElementById('redCounterIcon').style.color = "red";
 				};
 			}
-			console.log("yeet");
+	//		console.log("yeet");
 			yourCFrame();
 		}
 		
