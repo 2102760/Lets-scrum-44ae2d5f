@@ -39,7 +39,7 @@ const renderChat = async () => {
     						chatContainer.innerHTML = '';
     						for (var a in obj['results']) {
     							var line = obj['results'][a];
-    						    chatContainer.innerHTML = chatContainer.innerHTML + line['time'] + ' ' + line['username'] + ': ' + line['message'] + '<br>';
+    						    chatContainer.innerHTML = line['time'] + ' ' + line['username'] + ': ' + line['message'] + '<br>' + chatContainer.innerHTML;
     						}
     						chatContainer.scrollTo(0, chatContainer.scrollHeight);
 						}
@@ -52,7 +52,7 @@ const renderChat = async () => {
     						chatContainer.innerHTML = '';
     						for (var a in obj['results']) {
     							var line = obj['results'][a];
-    						    chatContainer.innerHTML = chatContainer.innerHTML + line['time'] + ' ' + line['username'] + ': ' + line['message'] + '<br>';
+    						    chatContainer.innerHTML = line['time'] + ' ' + line['username'] + ': ' + line['message'] + '<br>' + chatContainer.innerHTML;
     						}
     						chatContainer.scrollTo(0, chatContainer.scrollHeight);
 						}
