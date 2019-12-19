@@ -2,6 +2,11 @@ var openChallengeCount = 0;
 
 chrome.storage.sync.get(['challengeCounter'], function(items) {
     if(items.challengeCounter) {
+        var head=document.getElementsByTagName("HEAD")[0];
+        var style = document.createElement("style");
+            style.innerHTML = '#rotate{animation:rotation 5s infinite linear}@keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}',
+            head.appendChild(style)
+        ;
         var rightSide =document.getElementsByClassName("right-side")[0],
         counter=document.createElement("app-user-credits");
         counter.style = "border-right: 1px solid rgb(204, 204, 204); display: flex;",
