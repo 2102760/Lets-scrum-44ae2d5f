@@ -69,6 +69,14 @@ function loadSettings() {
                         <td id="chat">
                         
                         </td>
+                    </tr>                    
+                    <tr>
+                        <td style="padding-right: 60px; position: relative; top: -3.2%;">
+                            Challenge counter
+                        </td>
+                        <td id="challengeCounter">
+                        
+                        </td>
                     </tr>
                 </tbody
             </table>
@@ -87,6 +95,7 @@ function loadSettings() {
     toggleSetting("darkMode");
     toggleSetting("reviewCounter");
     toggleSetting("chat");
+    toggleSetting("challengeCounter");
 }
 
 function toggleSetting(setting) {

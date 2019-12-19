@@ -24,6 +24,10 @@
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],
       "js": ["breakTimer.js"]
+    },           
+    {
+      "matches": ["https://jarvis.bit-academy.nl/*"],
+      "js": ["challengeCounter.js"]
     },       
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],

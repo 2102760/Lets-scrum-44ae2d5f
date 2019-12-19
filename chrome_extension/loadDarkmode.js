@@ -15,7 +15,7 @@ chrome.storage.sync.get(['darkMode'], function(items) {
                 chrome.storage.sync.set({'darkMode': false});
                 window.location.href = window.location.href;
             };
-            switchen.style = "margin-top: auto; margin-bottom: auto; padding-right: 10px; cursor: pointer;",
+            switchen.style = "margin-top: auto; margin-bottom: auto; padding-right: 10px; padding-left: 10px; cursor: pointer;",
             switchen.style.cursor = "pointer",
             switchen.innerHTML='<i class="material-icons">nights_stay</i>',
             rightSide.insertBefore(switchen, rightSide.firstChild)
