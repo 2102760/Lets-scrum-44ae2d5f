@@ -51,8 +51,8 @@ function prepareFrame(src, id) {
     var newIfrm = document.createElement("iframe");
     newIfrm.setAttribute("src", src);
     newIfrm.id = id;
-    newIfrm.style.width = "500px";
-    newIfrm.style.height = "500px";
+    newIfrm.style.width = "0px";
+    newIfrm.style.height = "0px";
     document.body.appendChild(newIfrm);
 
     return document.getElementById(id);
@@ -66,8 +66,8 @@ function prepareModuleFrame(src, id) {
     var newIfrm = document.createElement("iframe");
     newIfrm.setAttribute("src", src);
     newIfrm.id = id;
-    newIfrm.style.width = "500px";
-    newIfrm.style.height = "500px";
+    newIfrm.style.width = "0px";
+    newIfrm.style.height = "0px";
     document.body.appendChild(newIfrm);
 
     var createdIfrm = document.getElementById(id);
