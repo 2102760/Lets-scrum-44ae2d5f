@@ -181,3 +181,11 @@ app-page-settings label.mat-form-field-label {
 app-page-settings div.mat-form-field-underline {
 	background: #fff !important;
 }
+.chatInputStyles{
+	background-color: black;
+	color: #FFF;
+}
+.chatButtonStyles{
+	background-color: black;
+	color: #FFF;
+}
