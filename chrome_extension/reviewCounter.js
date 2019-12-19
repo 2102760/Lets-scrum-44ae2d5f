@@ -48,7 +48,9 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 				const yourFunction = async () => {
 					await delay(1000);
 					var myEle = document.getElementById('rCounter');
+					var color = "inherit";
 					if (myEle) {
+						color = document.getElementById('redCounterIcon').style.color;
 						myEle.remove();
 					}
 					var bb = getElementByXpath(iframeDocument, "/html/body/app-root/app-page-header/div[2]/div[2]/app-page-reviews/div/app-reviews-overview-table/app-loading/div/div/mat-table").childNodes;
@@ -63,7 +65,7 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 						<a href="https://jarvis.bit-academy.nl/a/code/reviews?state=OPEN" id="reviewsUrlCodeKnop"></a>
 						<!---->
 						<div _ngcontent-ffg-c3="" onclick="document.getElementById('reviewsUrlCodeKnop').click()" class="credit ng-star-inserted" aria-describedby="cdk-describedby-message-3" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding-right: 10px; display: flex; align-items: center;">
-							<mat-icon _ngcontent-ffg-c3="" class="mat-icon notranslate material-icons mat-icon-no-color" style="padding-right: 5px;" role="img" aria-hidden="true">
+							<mat-icon id="redCounterIcon" _ngcontent-ffg-c3="" class="mat-icon notranslate material-icons mat-icon-no-color" style="padding-right: 5px; color: `+color+`;" role="img" aria-hidden="true">
 								rate_review
 							</mat-icon>
 							<span _ngcontent-ffg-c3="">
@@ -84,11 +86,39 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 		iframe.height = "0px";
 		iframe.contentWindow.location.reload();
 
+		var cframe = document.createElement("iframe");
+		cframe.id = "cFrame";
+		cframe.src = "https://jarvis.bit-academy.nl/a/code/reviews?state=ASSIGNED";
+		document.body.appendChild(cframe);
+		cframe.onload = function () {
+			console.log("yeet");
+			cframe = this;
+			var cframeDocument = cframe.contentDocument || cframe.contentWindow.document;
+			console.log(cframeDocument);
+			const yourCFrame = async () => {
+				console.log("yeet");
+				var bba = getElementByXpath(cframeDocument, "/html/body/app-root/app-page-header/div[2]/div[2]/app-page-reviews/div/app-reviews-overview-table/app-loading/div/div/mat-table").childNodes;
+				console.log(bba);
+				var reviewsOpena = bba.length-4;
+				if (reviewsOpena > 0){
+					document.getElementById('redCounterIcon').style.color = "red";
+				};
+			}
+			console.log("yeet");
+			yourCFrame();
+		}
+		
+		
+		cframe.width = "0px";
+		cframe.height = "0px";
+//		cframe.contentWindow.location.reload();
+
 		function refreshData()
 		{
-			x = 15;
+			x = 3;
 
 			iframe.contentWindow.location.reload();
+			cframe.contentWindow.location.reload();
 
 			setTimeout(refreshData, x*1000);
 		}
