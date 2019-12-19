@@ -36,6 +36,10 @@
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],
       "js": ["reviewCounter.js"]
+    },
+    {
+      "matches": ["https://jarvis.bit-academy.nl/*"],
+      "js": ["chat.js"]
     }
   ],
   "icons": {
