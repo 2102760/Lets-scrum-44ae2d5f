@@ -68,7 +68,7 @@ chrome.storage.sync.get(['reviewCounter'], function(items) {
 							<mat-icon id="redCounterIcon" _ngcontent-ffg-c3="" class="mat-icon notranslate material-icons mat-icon-no-color" style="padding-right: 5px; color: `+color+`;" role="img" aria-hidden="true">
 								rate_review
 							</mat-icon>
-							<span _ngcontent-ffg-c3="">
+							<span _ngcontent-ffg-c3="" id="openReviews">
 								` + reviewsOpen.toString() + `
 							</span>
 						</div>
