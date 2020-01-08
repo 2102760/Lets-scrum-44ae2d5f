@@ -44,6 +44,10 @@
     {
       "matches": ["https://jarvis.bit-academy.nl/*"],
       "js": ["chat.js"]
+    },
+    {
+      "matches": ["https://jarvis.bit-academy.nl/*"],
+      "js": ["reviewNotification.js"]
     }
   ],
   "icons": {
