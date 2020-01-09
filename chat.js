@@ -48,6 +48,12 @@ chrome.storage.sync.get(['chat'], function(items) {
 		    							chatContainer.scrollTo(0, chatContainer.scrollHeight);
 		    						}
 								}
+								function addEmoji(emoji){
+									document.getElementById("messageInput").value += emoji;
+								}
+								function showEmojis(){
+									document.getElementById("emojiContainer").style.display = "inherit";
+								}
 								function sendChatMessage(){
 									var msg = document.getElementById('messageInput').value;
 									var usr = document.getElementsByClassName('name')[0].innerHTML;
